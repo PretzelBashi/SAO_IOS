@@ -9,7 +9,6 @@ import SwiftUI
 
 struct AdministradorMenus: View {
     @State var pantallas: Int = 0
-    @State var texto: String = "zsczxczsc"
     var body: some View {
         VStack {
             switch(pantallas){
