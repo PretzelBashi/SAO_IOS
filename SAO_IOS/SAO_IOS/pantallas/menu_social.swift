@@ -1,13 +1,8 @@
-//
-//  menu_inicial.swift
-//  SAO_IOS
-//
-//  Created by alumno on 2/20/26.
-//
+
 
 import SwiftUI
 
-struct MenuInicial: View {
+struct MenuSocial: View {
     @Binding var pantallas: Int
     var body: some View {
         HStack{
@@ -15,8 +10,8 @@ struct MenuInicial: View {
                 BotonOpciones(icono:"perfil_0").onTapGesture {
                     pantallas = 1
                 }
-                BotonOpciones(icono:"social_0").onTapGesture {
-                    pantallas = 2
+                BotonOpciones(icono:"social_1").onTapGesture {
+                    pantallas = 0
                 }
                 BotonOpciones(icono:"chat_0").onTapGesture {
                     pantallas = 3
@@ -27,11 +22,19 @@ struct MenuInicial: View {
                 BotonOpciones(icono:"configuracion_0").onTapGesture {
                     pantallas = 5
                 }
-            }.padding(.leading, 10)
+            }.padding(.leading, 140)
+            VStack(spacing:2){
+                BotonCuadrado(icono: "grupo_0", texto: "Grupo",);
+                BotonCuadrado(icono: "agregar_amigo_0", texto: "Invitar",);
+                BotonCuadrado(icono: "gremio_0", texto: "Gremio",);
+                Spacer()
+            }.padding(.top,188)
         }
+        .frame(width: 400, height: 600)            
+
     }
 }
 
 #Preview(){
-    MenuInicial(pantallas: Binding<Int>(get: {1}, set: {_ in }))
+    MenuSocial(pantallas: Binding<Int>(get: {1}, set: {_ in }))
 }

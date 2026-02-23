@@ -1,13 +1,8 @@
-//
-//  menu_inicial.swift
-//  SAO_IOS
-//
-//  Created by alumno on 2/20/26.
-//
+
 
 import SwiftUI
 
-struct MenuInicial: View {
+struct MenuLocacion: View {
     @Binding var pantallas: Int
     var body: some View {
         HStack{
@@ -21,17 +16,25 @@ struct MenuInicial: View {
                 BotonOpciones(icono:"chat_0").onTapGesture {
                     pantallas = 3
                 }
-                BotonOpciones(icono:"locacion_0").onTapGesture {
-                    pantallas = 4
+                BotonOpciones(icono:"locacion_1").onTapGesture {
+                    pantallas = 0
                 }
                 BotonOpciones(icono:"configuracion_0").onTapGesture {
                     pantallas = 5
                 }
-            }.padding(.leading, 10)
+            }.padding(.leading, 140)
+            VStack(spacing:2){
+                BotonCuadrado(icono: "mapa_0", texto: "Local",);
+                BotonCuadrado(icono: "mapa_local_0", texto: "Mundial",);
+                Spacer()
+            }.padding(.top,306)
         }
+        .frame(width: 400, height: 600)
+            
+
     }
 }
 
 #Preview(){
-    MenuInicial(pantallas: Binding<Int>(get: {1}, set: {_ in }))
+    MenuLocacion(pantallas: Binding<Int>(get: {1}, set: {_ in }))
 }

@@ -15,13 +15,16 @@ struct AdministradorMenus: View {
             switch(pantallas){
                 case 0: MenuInicial(pantallas: $pantallas)
                 case 1: MenuPerfil(pantallas: $pantallas)
+                case 2: MenuSocial(pantallas: $pantallas)
+                case 3: MenuMensajes(pantallas: $pantallas)
+                case 4: MenuLocacion(pantallas: $pantallas)
+                case 5: MenuConfiguracion(pantallas: $pantallas)
                 default: MenuInicial(pantallas: $pantallas)
             }
-            Text(texto).onTapGesture {
-                texto = "esfsefs"
-            }
         }
-        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.grisFondo)
+        
     }
 }
 
